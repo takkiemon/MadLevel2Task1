@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
         initViews()
     }
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding.rvPlaces.adapter = placeAdapter
 
         for (i in Place.PLACE_NAMES.indices) {
-            places.add(Place(Place.PLACE_NAMES[i], Place.PLACE_RES_DRAWABLE_IDS[i]))
+            places.add(Place(Place.PLACE_NAMES[i],        Place.PLACE_RES_DRAWABLE_IDS[i]))
         }
         placeAdapter.notifyDataSetChanged()
     }
