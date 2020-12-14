@@ -20,7 +20,7 @@ class PlaceAdapter(private val places: List<Place>) : RecyclerView.Adapter<Place
     /**
      * Creates and returns a ViewHolder object, inflating a standard layout called simple_list_item_1.
      */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaceAdapter.ViewHolder {
         return ViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.item_place, parent, false)
         )
@@ -36,7 +36,7 @@ class PlaceAdapter(private val places: List<Place>) : RecyclerView.Adapter<Place
     /**
      * Called by RecyclerView to display the data at the specified position.
      */
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PlaceAdapter.ViewHolder, position: Int) {
         holder.databind(places[position])
     }
 }
